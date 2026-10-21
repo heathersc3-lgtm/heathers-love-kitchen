@@ -43,6 +43,7 @@
 <section id="menu" class="section">
   <h2>The Menu</h2>
   <p class="sub">Pressed fresh from fruits and veggies. <span class="price-tag">Juices $8–$10</span></p>
+  <p class="min-line">🚚 Delivery orders have a $50 minimum.</p>
   <div class="cards three">
     <article class="card accent-green"><img src="assets/juice-green.jpg" alt="Green cold-pressed juice" loading="lazy" width="480" height="600"><div class="body"><h3>Green Dream 💚</h3><p class="ing">Apples, green grapes, spinach, kale, celery, rhubarb, bok choy, ginger, pineapple, lemon</p><p>Leafy greens with a bright, naturally sweet finish.</p></div></article>
     <article class="card accent-ruby"><img src="assets/juice-ruby.jpg" alt="Ruby red cold-pressed juice" loading="lazy" width="480" height="600"><div class="body"><h3>Ruby Red ❤️</h3><p class="ing">Red grapes, beets, rhubarb, ginger, orange, turmeric, raspberries, strawberries</p><p>Earthy beets meet sweet berries and a warm little kick.</p></div></article>
@@ -92,7 +93,7 @@
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://heathersc3-lgtm.github.io/heathers-love-kitchen/thanks.html">
-    <input type="hidden" name="_autoresponse" value="Thank you so much for your order request with Heather's Love Kitchen! I got it, and I'll reach out soon to confirm your delivery time and payment. Fresh pressed, full of love. - Heather's Love Kitchen">
+    <input type="hidden" name="_autoresponse" value="Thank you so much for your order request with Heather's Love Kitchen! I got it, and I'll reach out soon to confirm your delivery time and payment. Delivery minimum: $50. Fresh pressed, full of love. - Heather's Love Kitchen">
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label>Name<input name="name" required autocomplete="name"></label>
     <div class="row two">
@@ -111,6 +112,7 @@
     </fieldset>
     <fieldset class="picker" id="picker">
       <legend>Tap to add items</legend>
+      <p class="min-notice" id="min-notice">🚚 <strong>$50 minimum for delivery orders</strong></p>
       <p class="hint">Each tap adds 1. Tap again for more.</p>
       <h4>Juices ($8–$10)</h4>
       <div class="item-btns">
@@ -144,6 +146,8 @@
     <noscript><label>Items &amp; quantities<textarea name="items_quantities" rows="3" required placeholder="e.g. 2 Green Dream, 1 Ruby Red, 3 ginger shots"></textarea></label></noscript>
     <label>Preferred delivery date<input name="preferred_delivery_date" type="date" id="ddate"></label>
     <label><span>Notes <span class="opt">(optional)</span></span><textarea name="notes" rows="3" placeholder="Gate code, best time to reach you, questions about pricing..."></textarea></label>
+    <label class="check ack"><input type="checkbox" name="minimum_ack" id="minimum_ack" value="Yes - customer understands delivery orders have a $50 minimum" required><span>I understand delivery orders have a $50 minimum</span></label>
+    <p id="ack-error" class="error" hidden>Please check the box to confirm you understand the $50 delivery minimum. 💚</p>
     <p id="form-status" class="status" role="status" hidden></p>
     <button class="btn" type="submit" id="submit-btn">Send Order Request 💚</button>
     <p class="fineprint" style="margin:0">This is a request, not a payment. Heather will confirm your order, delivery time and payment with you.</p>

@@ -112,3 +112,7 @@ h3{font-size:1.25rem}
 .fab{transition:opacity .2s}
 .fab.hide{opacity:0;pointer-events:none}
 .item-btn,.qbtn,input,textarea{scroll-margin:90px}
+.min-line{text-align:center;margin:-1rem auto 1.6rem;font-weight:700;color:var(--ruby)}
+.min-notice{margin:.4rem 0 .2rem;background:#FFF1DE;border:2px solid var(--orange);color:#5a2e00;border-radius:12px;padding:.6rem .8rem;text-align:center}
+.form .check.ack{align-items:flex-start;font-weight:700;background:#FFF8EC;border:2px solid #f2d4a8;border-radius:12px;padding:.8rem;min-height:52px}
+.form .check.ack input{width:1.5rem;height:1.5rem;margin-top:.05rem}

@@ -57,6 +57,8 @@
     e.preventDefault();
     hidden.value = text();
     if (!order.length) { err.hidden = false; document.getElementById('picker').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    var ack = document.getElementById('minimum_ack'), ackErr = document.getElementById('ack-error');
+    if (!ack.checked) { ackErr.hidden = false; ack.focus(); ack.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
     if (!form.checkValidity()) { form.reportValidity(); return; }
     var fd = new FormData(form), data = {};
     fd.forEach(function (v, k) { if (k !== '_next') data[k] = v; });
@@ -78,5 +80,7 @@
   });
   var fab = document.querySelector('.fab'), sec = document.getElementById('order');
   if (fab && sec && 'IntersectionObserver' in window) new IntersectionObserver(function (en) { fab.classList.toggle('hide', en[0].isIntersecting); }).observe(sec);
+  var ackBox = document.getElementById('minimum_ack');
+  if (ackBox) ackBox.addEventListener('change', function () { if (ackBox.checked) document.getElementById('ack-error').hidden = true; });
   render();
 })();
