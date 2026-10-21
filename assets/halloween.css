@@ -11,11 +11,11 @@ html.halloween .hw-glyph{flex:none;display:block}
 html.halloween .nav{background:rgba(7,4,13,.92);border-bottom:1.5px solid rgba(95,163,90,.7)}
 html.halloween .nav .wordmark{color:var(--hw-cream)}
 /* hero: night sky */
-html.halloween .hero{background:url("hw-stars.svg?v=hw4") 0 0/600px 400px repeat,radial-gradient(ellipse at 78% 12%,#3a1f5c 0,#1e0f33 35%,#0c0616 75%,#05030a 100%);padding-top:2.2rem}
+html.halloween .hero{background:url("hw-stars.svg?v=hw5") 0 0/600px 400px repeat,radial-gradient(ellipse at 78% 12%,#3a1f5c 0,#1e0f33 35%,#0c0616 75%,#05030a 100%);padding-top:2.2rem}
 html.halloween .hero::before,html.halloween .hero::after{display:none}
 html.halloween .hw-deco{display:block;position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 html.halloween .hw-scene{position:absolute;top:0;right:0;width:var(--sw);height:auto;max-width:none}
-html.halloween .hw-ground{position:absolute;left:0;right:0;bottom:0;top:calc(var(--sw)*.6714 - 26px);background:url("hw-hills.svg?v=hw4") 0 0/100% 40px no-repeat,linear-gradient(#0a0612,#0a0612) 0 38px/100% 100% no-repeat}
+html.halloween .hw-ground{position:absolute;left:0;right:0;bottom:0;top:calc(var(--sw)*.6714 - 26px);background:url("hw-hills.svg?v=hw5") 0 0/100% 40px no-repeat,linear-gradient(#0a0612,#0a0612) 0 38px/100% 100% no-repeat}
 html.halloween .hw-fog{position:absolute;left:-30%;width:160%;height:140px;background:radial-gradient(ellipse at 20% 50%,rgba(207,195,232,.16),transparent 60%),radial-gradient(ellipse at 60% 40%,rgba(207,195,232,.12),transparent 55%),radial-gradient(ellipse at 90% 60%,rgba(207,195,232,.14),transparent 60%);filter:blur(6px);animation:hwfog 28s ease-in-out infinite alternate}
 html.halloween .hw-fog.f1{top:calc(var(--sw)*.6714 - 70px)}
 html.halloween .hw-fog.f2{bottom:-30px;animation-duration:36s;animation-direction:alternate-reverse;opacity:.9}
@@ -64,9 +64,9 @@ html.halloween .hw-hand{display:block;position:absolute;z-index:0;right:3%;botto
 html.halloween body{position:relative}
 html.halloween .hw-witches{display:block;position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:5}
 html.halloween .hw-witch{position:absolute;height:auto;filter:drop-shadow(0 0 3px rgba(233,220,255,.9)) drop-shadow(0 0 14px rgba(201,182,242,.55))}
-html.halloween .hw-witch.w1{width:150px;animation:hwW1 40s linear -1s infinite}
-html.halloween .hw-witch.w2{width:112px;animation:hwW2 54s linear -12s infinite;opacity:.95}
-html.halloween .hw-witch.w3{width:84px;animation:hwW3 46s linear -24s infinite;opacity:.9}
+html.halloween .hw-witch.w1{width:150px;animation:hwW1 90s linear -2s infinite}
+html.halloween .hw-witch.w2{width:112px;animation:hwW2 108s linear -26s infinite;opacity:.95}
+html.halloween .hw-witch.w3{width:84px;animation:hwW3 96s linear -52s infinite;opacity:.9}
 @keyframes hwW1{
  0%{left:60%;top:1%;transform:rotate(-8deg) scaleX(1)}
  12%{left:108%;top:4%;transform:rotate(-4deg) scaleX(1)}
@@ -108,3 +108,24 @@ html.halloween .hw-witch.w3{width:84px;animation:hwW3 46s linear -24s infinite;o
 @media(max-width:600px){html.halloween .hw-witch.w1{width:100px}html.halloween .hw-witch.w2{width:76px}html.halloween .hw-witch.w3{width:58px}}
 @media(prefers-reduced-motion:reduce){html.halloween .hw-witch{animation:none}html.halloween .hw-witch.w1{left:62%;top:1%}html.halloween .hw-witch.w2,html.halloween .hw-witch.w3{display:none}}
 html.halloween .eyebrow.wob{color:var(--hw-lav);border-color:rgba(201,182,242,.6)}
+
+/* small bat swarms fluttering across the screen as you scroll (fixed layer, a few at a time) */
+.hw-bats{display:none}
+html.halloween .hw-bats{display:block;position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:6}
+html.halloween .hw-swarm{position:absolute;left:0;width:180px;height:80px;opacity:0}
+html.halloween .hw-swarm img{position:absolute;width:36px;height:auto;filter:drop-shadow(0 0 2px rgba(233,220,255,.95)) drop-shadow(0 0 8px rgba(201,182,242,.5));animation:hwflap .32s ease-in-out infinite alternate}
+html.halloween .hw-swarm img:nth-child(1){left:0;top:26px}
+html.halloween .hw-swarm img:nth-child(2){left:44px;top:2px;width:28px;animation-delay:-.1s}
+html.halloween .hw-swarm img:nth-child(3){left:80px;top:38px;width:30px;animation-delay:-.2s}
+html.halloween .hw-swarm img:nth-child(4){left:120px;top:12px;width:24px;animation-delay:-.05s}
+html.halloween .hw-swarm img:nth-child(5){left:148px;top:48px;width:20px;animation-delay:-.15s}
+@keyframes hwflap{from{transform:scaleY(1)}to{transform:scaleY(.45)}}
+html.halloween .hw-swarm.s1{top:16%;animation:hwSwR 44s linear 0s infinite}
+html.halloween .hw-swarm.s2{top:58%;animation:hwSwL 52s linear -14s infinite}
+html.halloween .hw-swarm.s3{top:34%;animation:hwSwL 48s linear -30s infinite}
+html.halloween .hw-swarm.s4{top:78%;animation:hwSwR 56s linear -40s infinite}
+html.halloween .hw-swarm.s5{top:8%;animation:hwSwL 60s linear -50s infinite}
+@keyframes hwSwR{0%{opacity:1;transform:translate(-200px,0)}15%{transform:translate(25vw,-24px)}30%{transform:translate(55vw,18px)}45%{transform:translate(85vw,-12px)}55%{opacity:1;transform:translate(calc(100vw + 40px),6px)}55.01%,100%{opacity:0;transform:translate(calc(100vw + 40px),6px)}}
+@keyframes hwSwL{0%{opacity:1;transform:translate(calc(100vw + 40px),0) scaleX(-1)}15%{transform:translate(70vw,20px) scaleX(-1)}30%{transform:translate(40vw,-16px) scaleX(-1)}45%{transform:translate(10vw,14px) scaleX(-1)}55%{opacity:1;transform:translate(-200px,-4px) scaleX(-1)}55.01%,100%{opacity:0;transform:translate(-200px,-4px) scaleX(-1)}}
+@media(max-width:600px){html.halloween .hw-swarm{transform-origin:0 0;zoom:.72}}
+@media(prefers-reduced-motion:reduce){html.halloween .hw-bats{display:none}}

@@ -6,7 +6,7 @@
   var t=/[?&]hlk_test_date=([0-9-]+)/.exec(location.search); // preview/testing override only
   if(t){var p=t[1].split('-');now=new Date(+p[0],p[1]-1,+p[2],12);}
   if(!(now<END))return;
-  var V='?v=hw4';
+  var V='?v=hw5';
   document.documentElement.classList.add('halloween');
   function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html)e.innerHTML=html;e.setAttribute('aria-hidden','true');return e;}
   var MOON='<svg class="hw-glyph" viewBox="0 0 24 24" width="18" height="18"><path d="M15 3a9 9 0 1 0 6 15.5A7.5 7.5 0 0 1 15 3z" fill="#f1e6cf"/></svg>';
@@ -22,6 +22,9 @@
     var ws=el('div','hw-witches','');
     for(var i=1;i<=3;i++)ws.innerHTML+='<img class="hw-witch w'+i+'" src="assets/hw-witch.svg'+V+'" alt="">';
     document.body.appendChild(ws);
+    var bl=el('div','hw-bats',''),sw='';
+    for(var k=1;k<=5;k++){sw+='<div class="hw-swarm s'+k+'">';for(var m=0;m<(k%2?5:4);m++)sw+='<img src="assets/hw-batlet.svg'+V+'" alt="">';sw+='</div>';}
+    bl.innerHTML=sw;document.body.appendChild(bl);
     var foot=document.querySelector('.footer');
     if(foot){foot.insertBefore(el('div','hw-circle-wrap','<img class="hw-circle" src="assets/hw-circle.svg'+V+'" alt="">'),foot.firstChild);
       foot.appendChild(el('img','hw-hand')).src='assets/hw-hand.svg'+V;}
