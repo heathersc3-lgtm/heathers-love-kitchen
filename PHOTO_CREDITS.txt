@@ -1,0 +1,22 @@
+Photo credits - Heather's Love Kitchen website
+
+HEATHER'S OWN PHOTOS (her bottles with the "hlk" heart label, from her Instagram; collected by her Lovely bot under /workspace/ig/approved):
+  assets/hero.jpg            <- juice_ruby_red/own_bundle_full.jpg (row of juices)
+  assets/juice-green.jpg     <- crop of juice_ruby_red/own_trio.jpg (green bottle; illustrates Green Dream)
+  assets/juice-orange.jpg    <- crop of juice_ruby_red/own_trio.jpg (orange bottle; illustrates Orange Bang Bliss)
+  assets/juice-ruby.jpg      <- juice_ruby_red/own_red_closeup.jpg
+  assets/juice-celery.jpg    <- crop of juice_green_dream/own_candidate_1.jpg (her "new product #Celeryapplelemon" story; text cropped out)
+  assets/juice-lemon.jpg     <- juice_lemon_cayenne_agave/00_own_bottle.jpg (her lemonade bottle with lemon slice)
+  assets/shot-chlorophyll.jpg<- chlorophyll/own_chlorophyll.jpg
+  assets/shot-aloe.jpg       <- aloe/own_aloe.jpg
+  assets/shot-turmeric.jpg   <- turmeric/own_turmeric.jpg
+  assets/about.jpg           <- ginger_v2/own_wellness_group.jpg (wellness shots with herbs)
+  assets/og-image.jpg        <- built from assets/hero.jpg + text
+  Note: no single photo of her ginger shot exists; the site uses an emoji tile for Ginger.
+
+STOCK (Pexels License, free for commercial use, no attribution required; https://www.pexels.com/license/):
+  assets/seamoss.jpg         <- Pexels 17317995 | Francesco Ungaro | https://www.pexels.com/photo/red-plant-floating-in-water-17317995/
+  (No photo of Heather's own sea moss gel exists. The page says the sea moss photo is stock.)
+
+Icons (favicon-32.png, apple-touch-icon.png, icon-512.png): text wordmark "H" + green heart, made for this site.
+No photos show a person.
