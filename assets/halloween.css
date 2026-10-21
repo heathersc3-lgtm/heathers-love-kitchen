@@ -1,0 +1,35 @@
+/* Halloween accents for Heather's Love Kitchen.
+   Everything is scoped to html.halloween, which js/halloween.js adds ONLY before Nov 1, 2026 (visitor's local time).
+   On/after Nov 1 nothing here applies and the site renders exactly as before. */
+.hw-banner,.hw-deco{display:none}
+html.halloween{--hw-orange:#F28C28;--hw-purple:#6B3FA0;--hw-purple-dk:#4A2470}
+html.halloween .hw-banner{display:block;background:var(--hw-purple-dk);color:#fff;text-align:center;font-weight:800;font-size:1rem;letter-spacing:.01em;padding:.5rem 1rem;border-bottom:5px solid transparent;border-image:repeating-linear-gradient(90deg,var(--hw-orange) 0 16px,var(--hw-purple) 16px 32px) 5}
+html.halloween .nav{border-bottom:3px solid var(--hw-orange)}
+html.halloween .hero::after{background:var(--hw-purple);opacity:.22}
+html.halloween .hw-deco{display:block;position:absolute;inset:0;pointer-events:none;z-index:2}
+html.halloween .hw-deco span{position:absolute;line-height:1}
+html.halloween .hw-deco .bat{font-size:1.6rem;animation:hwflap 5s ease-in-out infinite}
+html.halloween .hw-deco .b1{top:1.2rem;left:6%}
+html.halloween .hw-deco .b2{top:3.4rem;left:16%;font-size:1.1rem;animation-delay:-1.7s}
+html.halloween .hw-deco .b3{top:1.6rem;right:20%;font-size:1.25rem;animation-delay:-3.2s}
+html.halloween .hw-deco .ghost{top:4.5rem;right:5%;font-size:2.6rem;animation:hwghost 4s ease-in-out infinite;filter:drop-shadow(0 6px 6px rgba(107,63,160,.25))}
+html.halloween .hw-deco .p1{bottom:.35rem;left:4%;font-size:2.1rem}
+html.halloween .hw-deco .p2{bottom:.35rem;right:4%;font-size:1.7rem}
+@keyframes hwflap{50%{transform:translateY(-10px) rotate(-8deg)}}
+@keyframes hwghost{50%{transform:translateY(-12px) rotate(4deg)}}
+@media(max-width:600px){
+  html.halloween .hw-deco .b1{top:.5rem;left:3%;font-size:1.2rem}
+  html.halloween .hw-deco .b2{display:none}
+  html.halloween .hw-deco .b3{top:.5rem;right:4%;font-size:1.1rem}
+  html.halloween .hw-deco .ghost{top:auto;bottom:.2rem;right:42%;font-size:1.8rem}
+  html.halloween .hw-deco .p1,html.halloween .hw-deco .p2{font-size:1.6rem}
+}
+@media(prefers-reduced-motion:reduce){html.halloween .hw-deco span{animation:none}}
+html.halloween .hero-photo{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--hw-orange),0 16px 36px rgba(74,36,112,.25)}
+html.halloween .btn-outline{border-color:var(--hw-purple);color:var(--hw-purple-dk)}
+html.halloween h2::after{content:" 🎃";font-size:.8em}
+html.halloween .card h2::after,html.halloween .form h2::after{content:none}
+html.halloween .price-tag{box-shadow:0 0 0 2px var(--hw-purple)}
+html.halloween .band{background:linear-gradient(180deg,var(--mint),#EFE6F7)}
+html.halloween .footer{border-top:6px solid transparent;border-image:repeating-linear-gradient(90deg,var(--hw-orange) 0 16px,var(--hw-purple) 16px 32px) 6}
+html.halloween .footer::before{content:"🎃 👻 🦇";display:block;font-size:1.6rem;margin-bottom:.4rem}
