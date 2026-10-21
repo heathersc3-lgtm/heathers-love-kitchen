@@ -16,7 +16,25 @@ HEATHER'S OWN PHOTOS (her bottles with the "hlk" heart label, from her Instagram
 
 STOCK (Pexels License, free for commercial use, no attribution required; https://www.pexels.com/license/):
   assets/seamoss.jpg         <- Pexels 17317995 | Francesco Ungaro | https://www.pexels.com/photo/red-plant-floating-in-water-17317995/
-  (No photo of Heather's own sea moss gel exists. The page says the sea moss photo is stock.)
+  (Superseded Oct 20, 2026: seamoss.jpg is now her own Instagram photo.)
 
 Icons (favicon-32.png, apple-touch-icon.png, icon-512.png): text wordmark "H" + green heart, made for this site.
 No photos show a person.
+
+UPDATE Oct 20, 2026 (photo refresh):
+  assets/hero.jpg             <- style reference photo Heather sent (/workspace/hlk_style_reference.jpg), border cropped
+  assets/og-image.jpg         <- previous text panel + new hero
+  Heather's own Instagram posts (/workspace/ig/hq, bright treatment applied):
+  assets/juice-green.jpg      <- 02_green-dream-juice-bottle (post DetHi0wkeiv)
+  assets/juice-ruby.jpg       <- 15_ruby-red-juice-bottles (post DetJZawESmZ)
+  assets/juice-lemon.jpg      <- 01_lemon-cayenne-agave-lemonade (post DetL8-hlQdX)
+  assets/shot-chlorophyll.jpg <- 19_chlorophyll-wellness-shot (post Des8adADX4Z)
+  assets/shot-aloe.jpg        <- 20_aloe-wellness-shot (post Des7qrTDYvm)
+  assets/shot-turmeric.jpg    <- 17_turmeric-wellness-shot (post DetGbvuEVWk)
+  assets/shot-ginger.jpg      <- 18_ginger-wellness-shot (post DetAxKwEQ7B)
+  assets/seamoss.jpg          <- 13_sea-moss-gel-dried (post DeuUHz8FOcg); replaces the Pexels stock sea moss photo
+  Decorative produce only (reposted on her Instagram, may not be her photos; never captioned as her work):
+  assets/produce-greens-citrus.jpg <- 03_fruit-tray-berries-citrus (post DevJtx4DZ0P)
+  assets/produce-roots-berries.jpg <- 11_oranges-with-leaves (post DeulVzEFPHZ)
+  Unchanged: juice-orange.jpg, juice-celery.jpg, about.jpg.
+  Previous versions: /workspace/img_backup/hlk_assets (original) and /workspace/img_backup/hlk_assets_brightened.
