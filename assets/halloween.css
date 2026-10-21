@@ -6,7 +6,7 @@ html.halloween{--hw-orange:#F28C28;--hw-purple:#6B3FA0;--hw-purple-dk:#4A2470}
 html.halloween .hw-banner{display:block;background:var(--hw-purple-dk);color:#fff;text-align:center;font-weight:800;font-size:1rem;letter-spacing:.01em;padding:.5rem 1rem;border-bottom:5px solid transparent;border-image:repeating-linear-gradient(90deg,var(--hw-orange) 0 16px,var(--hw-purple) 16px 32px) 5}
 html.halloween .nav{border-bottom:3px solid var(--hw-orange)}
 html.halloween .hero::after{background:var(--hw-purple);opacity:.22}
-html.halloween .hw-deco{display:block;position:absolute;inset:0;pointer-events:none;z-index:2}
+html.halloween .hw-deco{display:block;position:absolute;inset:0;pointer-events:none;z-index:0}
 html.halloween .hw-deco span{position:absolute;line-height:1}
 html.halloween .hw-deco .bat{font-size:1.6rem;animation:hwflap 5s ease-in-out infinite}
 html.halloween .hw-deco .b1{top:1.2rem;left:6%}
@@ -33,3 +33,28 @@ html.halloween .price-tag{box-shadow:0 0 0 2px var(--hw-purple)}
 html.halloween .band{background:linear-gradient(180deg,var(--mint),#EFE6F7)}
 html.halloween .footer{border-top:6px solid transparent;border-image:repeating-linear-gradient(90deg,var(--hw-orange) 0 16px,var(--hw-purple) 16px 32px) 6}
 html.halloween .footer::before{content:"🎃 👻 🦇";display:block;font-size:1.6rem;margin-bottom:.4rem}
+
+/* ---- full moon, flying witch, witch's circle, bat cave ---- */
+.hw-circle,.hw-cave{display:none}
+html.halloween .hero::before{width:170px;height:170px;top:-30px;right:-30px;opacity:1;background:radial-gradient(circle at 38% 40%,rgba(214,196,140,.55) 0 9%,transparent 10%),radial-gradient(circle at 62% 64%,rgba(214,196,140,.5) 0 7%,transparent 8%),radial-gradient(circle at 66% 32%,rgba(214,196,140,.45) 0 5%,transparent 6%),radial-gradient(circle,#FFF8DC 0,#F8E9B5 70%,#F1DC98 100%);box-shadow:0 0 50px 18px rgba(255,236,170,.55)}
+html.halloween .hw-witch{position:absolute;top:.4rem;left:0;width:96px;height:auto;animation:hwfly 26s linear -6s infinite;filter:drop-shadow(0 4px 4px rgba(43,26,61,.25))}
+@keyframes hwfly{0%{transform:translate(-140px,40px) rotate(-4deg)}25%{transform:translate(25vw,0) rotate(2deg)}50%{transform:translate(50vw,30px) rotate(-3deg)}75%{transform:translate(75vw,-4px) rotate(2deg)}100%{transform:translate(calc(100vw + 40px),24px) rotate(-4deg)}}
+html.halloween .footer::before{content:none}
+html.halloween .hw-cave{display:block;position:relative;width:320px;max-width:100%;aspect-ratio:1/1;margin:-1rem auto .6rem;pointer-events:none}
+html.halloween .hw-cave .hw-circle{display:block;position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+html.halloween .hw-cave-rock{position:absolute;left:21%;top:40%;width:58%;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+html.halloween .hw-cbat{position:absolute;left:50%;top:58%;width:26px;margin:-6px 0 0 -13px;opacity:0;filter:drop-shadow(0 0 2px rgba(255,236,200,.85));animation:hwcave 6s ease-in infinite}
+html.halloween .hw-cbat.c1{--x:-150px;--y:-70px;animation-delay:0s}
+html.halloween .hw-cbat.c2{--x:-120px;--y:-95px;animation-delay:.5s}
+html.halloween .hw-cbat.c3{--x:-170px;--y:-40px;animation-delay:1.1s}
+html.halloween .hw-cbat.c4{--x:150px;--y:-80px;animation-delay:2.6s}
+html.halloween .hw-cbat.c5{--x:120px;--y:-105px;animation-delay:3.1s}
+html.halloween .hw-cbat.c6{--x:175px;--y:-50px;animation-delay:3.6s}
+html.halloween .hw-cbat.c7{--x:-60px;--y:-120px;animation-delay:4.4s}
+@keyframes hwcave{0%{opacity:0;transform:translate(var(--x),var(--y)) scale(1)}10%{opacity:1}40%{transform:translate(calc(var(--x)*.55),calc(var(--y)*.35 - 12px)) scale(.8) rotate(-8deg)}85%{opacity:1}100%{opacity:0;transform:translate(0,0) scale(.15)}}
+@media(max-width:600px){
+  html.halloween .hero::before{width:120px;height:120px;top:-28px;right:-28px}
+  html.halloween .hw-witch{width:70px;top:-.35rem}
+  html.halloween .hw-cave{width:270px}
+}
+@media(prefers-reduced-motion:reduce){html.halloween .hw-witch{animation:none;left:62%;transform:none}html.halloween .hw-cbat{animation:none;opacity:0}}
