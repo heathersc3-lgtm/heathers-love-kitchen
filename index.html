@@ -69,7 +69,6 @@
       <p><strong>Ask for pricing</strong> in your order request and Heather will get back to you.</p>
     </div>
   </div>
-  <p class="fineprint">Sea moss photo is a stock image. Juice and shot photos are Heather's own.</p>
 </section>
 
 <div class="band">
@@ -88,13 +87,13 @@
 <section id="order" class="section">
   <h2>Send an Order Request</h2>
   <p class="sub">Delivery only, in Santa Clarita. Pick your favorites and Heather will reach out to confirm your delivery time and payment. 🚚💚</p>
-  <form class="form" action="https://formsubmit.co/heathersc3@gmail.com" method="POST">
+  <form id="order-form" class="form" action="https://formsubmit.co/heathersc3@gmail.com" method="POST" novalidate>
     <input type="hidden" name="_subject" value="New order request - Heather's Love Kitchen">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://heathersc3-lgtm.github.io/heathers-love-kitchen/thanks.html">
-    <input type="hidden" name="_autoresponse" value="Thank you so much for your order request with Heather's Love Kitchen! 💚 I got it, and I'll reach out soon to confirm your delivery time and payment. Fresh pressed, full of love. - Heather's Love Kitchen 💚">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="_autoresponse" value="Thank you so much for your order request with Heather's Love Kitchen! I got it, and I'll reach out soon to confirm your delivery time and payment. Fresh pressed, full of love. - Heather's Love Kitchen">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label>Name<input name="name" required autocomplete="name"></label>
     <div class="row two">
       <label>Email<input name="email" type="email" required autocomplete="email"></label>
@@ -110,37 +109,43 @@
         </div>
       </div>
     </fieldset>
-    <fieldset>
-      <legend>Juices ($8–$10)</legend>
-      <div class="checks">
-        <label class="check"><input type="checkbox" name="juices[]" value="Green Dream">Green Dream</label>
-        <label class="check"><input type="checkbox" name="juices[]" value="Ruby Red">Ruby Red</label>
-        <label class="check"><input type="checkbox" name="juices[]" value="Orange Bang Bliss">Orange Bang Bliss</label>
-        <label class="check"><input type="checkbox" name="juices[]" value="Celery Apple Lemon">Celery Apple Lemon</label>
-        <label class="check"><input type="checkbox" name="juices[]" value="Lemon Cayenne Agave">Lemon Cayenne Agave</label>
+    <fieldset class="picker" id="picker">
+      <legend>Tap to add items</legend>
+      <p class="hint">Each tap adds 1. Tap again for more.</p>
+      <h4>Juices ($8–$10)</h4>
+      <div class="item-btns">
+        <button type="button" class="item-btn" data-item="Green Dream">💚 Green Dream</button>
+        <button type="button" class="item-btn" data-item="Ruby Red">❤️ Ruby Red</button>
+        <button type="button" class="item-btn" data-item="Orange Bang Bliss">🧡 Orange Bang Bliss</button>
+        <button type="button" class="item-btn" data-item="Celery Apple Lemon">🍏 Celery Apple Lemon</button>
+        <button type="button" class="item-btn" data-item="Lemon Cayenne Agave">🍋 Lemon Cayenne Agave</button>
+      </div>
+      <h4>Wellness shots</h4>
+      <div class="item-btns">
+        <button type="button" class="item-btn" data-item="Chlorophyll shot">Chlorophyll</button>
+        <button type="button" class="item-btn" data-item="Aloe shot">Aloe</button>
+        <button type="button" class="item-btn" data-item="Turmeric shot">Turmeric</button>
+        <button type="button" class="item-btn" data-item="Ginger shot">Ginger</button>
+      </div>
+      <h4>Sea moss gel</h4>
+      <div class="item-btns">
+        <button type="button" class="item-btn" data-item="Sea moss gel - shot">Shot</button>
+        <button type="button" class="item-btn" data-item="Sea moss gel - half pint">Half pint</button>
+        <button type="button" class="item-btn" data-item="Sea moss gel - pint">Pint</button>
       </div>
     </fieldset>
-    <fieldset>
-      <legend>Wellness shots</legend>
-      <div class="checks">
-        <label class="check"><input type="checkbox" name="shots[]" value="Chlorophyll">Chlorophyll</label>
-        <label class="check"><input type="checkbox" name="shots[]" value="Aloe">Aloe</label>
-        <label class="check"><input type="checkbox" name="shots[]" value="Turmeric">Turmeric</label>
-        <label class="check"><input type="checkbox" name="shots[]" value="Ginger">Ginger</label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Sea moss gel</legend>
-      <div class="checks">
-        <label class="check"><input type="checkbox" name="sea_moss[]" value="Shot">Shot</label>
-        <label class="check"><input type="checkbox" name="sea_moss[]" value="Half pint">Half pint</label>
-        <label class="check"><input type="checkbox" name="sea_moss[]" value="Pint">Pint</label>
-      </div>
-    </fieldset>
-    <label>Items &amp; quantities<textarea name="items_quantities" rows="3" required placeholder="e.g. 2 Green Dream, 1 Ruby Red, 3 ginger shots"></textarea></label>
-    <label>Preferred delivery date<input name="preferred_delivery_date" type="date"></label>
+    <div class="summary" aria-live="polite">
+      <h4>Items &amp; quantities</h4>
+      <ul id="order-list" class="order-list"></ul>
+      <p id="order-empty" class="empty">No items yet. Tap the items above to add them.</p>
+      <p id="order-error" class="error" hidden>Please add at least one item.</p>
+      <input type="hidden" name="order_items" id="order_items">
+    </div>
+    <noscript><label>Items &amp; quantities<textarea name="items_quantities" rows="3" required placeholder="e.g. 2 Green Dream, 1 Ruby Red, 3 ginger shots"></textarea></label></noscript>
+    <label>Preferred delivery date<input name="preferred_delivery_date" type="date" id="ddate"></label>
     <label><span>Notes <span class="opt">(optional)</span></span><textarea name="notes" rows="3" placeholder="Gate code, best time to reach you, questions about pricing..."></textarea></label>
-    <button class="btn" type="submit">Send Order Request 💚</button>
+    <p id="form-status" class="status" role="status" hidden></p>
+    <button class="btn" type="submit" id="submit-btn">Send Order Request 💚</button>
     <p class="fineprint" style="margin:0">This is a request, not a payment. Heather will confirm your order, delivery time and payment with you.</p>
   </form>
 </section>
@@ -153,6 +158,6 @@
   <p class="small">&copy; <span id="y">2026</span> Heather's Love Kitchen</p>
 </footer>
 <a class="btn btn-orange fab" href="#order">Order now</a>
-<script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();</script>
+<script src="js/order.js"></script>
 </body>
 </html>

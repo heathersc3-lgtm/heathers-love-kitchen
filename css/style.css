@@ -88,3 +88,27 @@ h3{font-size:1.25rem}
 .small{font-size:.85rem;opacity:.8}
 .fab{position:fixed;right:1rem;bottom:1rem;z-index:20;box-shadow:0 8px 22px rgba(0,0,0,.25)}
 @media(min-width:900px){.fab{display:none}.footer{padding-bottom:2.4rem}}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.picker h4,.summary h4{margin:.9rem 0 .5rem;font-size:1rem;color:var(--ink)}
+.picker .hint{margin:0;color:var(--muted);font-size:.9rem}
+.item-btns{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.item-btn{position:relative;min-height:56px;padding:.6rem .7rem;border:2px solid #cfe1c8;border-radius:14px;background:#f6fbf3;color:var(--forest);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;text-align:center;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .08s}
+.item-btn:active{transform:scale(.96)}
+.item-btn.on{background:var(--forest);border-color:var(--forest);color:#fff}
+.item-btn .badge{position:absolute;top:-8px;right:-6px;min-width:26px;height:26px;padding:0 6px;border-radius:999px;background:var(--orange);color:#2b1600;font-size:.85rem;line-height:26px;font-weight:800}
+.summary{background:var(--mint);border-radius:14px;padding:.4rem 1rem 1rem}
+.order-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.order-list li{display:flex;align-items:center;justify-content:space-between;gap:.5rem;background:#fff;border-radius:12px;padding:.45rem .5rem .45rem .8rem}
+.oname{font-weight:700}
+.ctrl{display:flex;align-items:center;gap:.3rem;flex:none}
+.qty{min-width:2.2rem;text-align:center;font-weight:800}
+.qbtn{width:44px;height:44px;border-radius:50%;border:2px solid var(--leaf);background:#fff;color:var(--forest);font-size:1.3rem;font-weight:800;line-height:1;cursor:pointer;touch-action:manipulation}
+.qbtn.rm{border-color:#e6b9c3;color:var(--ruby);font-size:1rem}
+.empty{margin:.2rem 0 0;color:var(--muted);font-size:.92rem}
+.error{margin:.5rem 0 0;color:var(--ruby);font-weight:800}
+.status{margin:0;padding:.8rem 1rem;border-radius:12px;font-weight:700}
+.status.ok{background:var(--mint);color:var(--forest)}
+.status.bad{background:#fdecef;color:var(--ruby)}
+.fab{transition:opacity .2s}
+.fab.hide{opacity:0;pointer-events:none}
+.item-btn,.qbtn,input,textarea{scroll-margin:90px}
