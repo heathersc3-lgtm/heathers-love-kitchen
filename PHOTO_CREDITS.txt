@@ -38,3 +38,7 @@ UPDATE Oct 20, 2026 (photo refresh):
   assets/produce-roots-berries.jpg <- 11_oranges-with-leaves (post DeulVzEFPHZ)
   Unchanged: juice-orange.jpg, juice-celery.jpg, about.jpg.
   Previous versions: /workspace/img_backup/hlk_assets (original) and /workspace/img_backup/hlk_assets_brightened.
+
+Oct 20, 2026 update: juice and wellness shot card photos (juice-*.jpg, shot-*.jpg) and the two produce bands
+(produce-greens-citrus.jpg, produce-roots-berries.jpg) are AI-generated styled images based on Heather's own
+Instagram bottle photos and her style reference. Hero is Heather's style reference. Sea moss photo is from her Instagram.
