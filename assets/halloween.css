@@ -107,3 +107,4 @@ html.halloween .hw-witch.w3{width:84px;animation:hwW3 46s linear -24s infinite;o
  100%{left:-16%;top:70%;transform:rotate(-10deg) scaleX(1)}}
 @media(max-width:600px){html.halloween .hw-witch.w1{width:100px}html.halloween .hw-witch.w2{width:76px}html.halloween .hw-witch.w3{width:58px}}
 @media(prefers-reduced-motion:reduce){html.halloween .hw-witch{animation:none}html.halloween .hw-witch.w1{left:62%;top:1%}html.halloween .hw-witch.w2,html.halloween .hw-witch.w3{display:none}}
+html.halloween .eyebrow.wob{color:var(--hw-lav);border-color:rgba(201,182,242,.6)}
