@@ -1,0 +1,52 @@
+/* Fall / harvest layer for Heather's Love Kitchen (classy autumn, matches the Thanksgiving flyers).
+   Everything is scoped to html.fall, which js/fall.js adds ONLY Nov 1-30, 2026 (visitor's local time).
+   Outside those dates nothing here applies. */
+.fl-banner,.fl-deco,.fl-garland-wrap{display:none}
+html.fall{--fl-bark:#2a120b;--fl-rust:#8E2C17;--fl-amber:#D9782A;--fl-gold:#E3A63E;--fl-cream:#FFF4E2;--fl-paper:#FBF3E6}
+html.fall body{background:var(--fl-paper)}
+html.fall .fl-banner{display:flex;align-items:center;justify-content:center;gap:.6rem;background:linear-gradient(90deg,#2a120b,#6a2612 50%,#2a120b);color:#F8E3BF;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1rem;letter-spacing:.05em;padding:.5rem 1rem;text-align:center;border-bottom:1px solid rgba(227,166,62,.55)}
+html.fall .fl-banner svg{flex:none;display:block}
+/* nav */
+html.fall .nav{background:rgba(251,243,230,.95);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#8E2C17,#D9782A 35%,#E3A63E 60%,#A85A22) 1}
+html.fall .wordmark{color:#6b2611}
+html.fall .nav .btn-sm{background:#6b2611;border-color:#6b2611}
+/* hero: harvest sunset like the flyers */
+html.fall .hero{background:linear-gradient(180deg,#24100a 0%,#3a160c 30%,#5e2512 58%,#93401a 80%,#b9602a 100%);padding-bottom:8.5rem}
+html.fall .hero::before,html.fall .hero::after{display:none}
+html.fall .fl-deco{display:block;position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+html.fall .fl-sun{position:absolute;right:8%;bottom:70px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,140,.9) 0,rgba(247,170,80,.55) 22%,rgba(220,120,45,.18) 48%,transparent 70%)}
+html.fall .fl-scene{position:absolute;left:0;bottom:0;width:100%;height:230px;max-width:none;object-fit:cover;object-position:50% 100%}
+html.fall .fl-wind path{stroke:rgba(255,226,180,.45);stroke-width:1.6}
+html.fall .hero h1{color:var(--fl-cream);text-shadow:0 2px 14px rgba(0,0,0,.45)}
+html.fall .hero .lead{color:rgba(255,240,218,.92)}
+html.fall .hero .signoff{color:var(--fl-gold)}
+html.fall .hero .btn-outline{color:var(--fl-cream);border-color:rgba(255,240,218,.85);background:rgba(36,16,10,.35)}
+html.fall .hero-photo{position:relative;z-index:1;box-shadow:0 0 0 1px rgba(227,166,62,.45),0 20px 50px rgba(20,8,4,.55),0 0 46px rgba(217,120,42,.28)}
+@media(max-width:600px){html.fall .hero{padding-bottom:6rem}html.fall .fl-scene{height:150px}html.fall .fl-sun{width:240px;height:240px;right:-30px;bottom:40px}html.fall .fl-banner{font-size:.92rem;letter-spacing:.03em}}
+@media(max-width:480px){html.fall .fl-from{display:none}}
+/* sections */
+html.fall h2{color:#6b2611}
+html.fall .band{background:#F5E6CF}
+html.fall .card,html.fall .shot,html.fall .feature,html.fall .produce-band img{box-shadow:0 8px 24px rgba(90,40,15,.12)}
+html.fall .shot .emoji{background:linear-gradient(135deg,#F7DDB5,#E3A65E)}
+/* footer */
+html.fall .footer{background:linear-gradient(180deg,#3a160c,#24100a);color:#F3DEC0;border-top:3px solid #A85A22}
+html.fall .footer a{color:#F2C27A}
+html.fall .footer .wordmark{color:var(--fl-cream)}
+/* falling leaves on the wind */
+html.fall .fl-leaves{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:6}
+html.fall .fl-leaf{position:absolute;top:-8vh;display:block;will-change:transform;animation:flfall var(--d) linear var(--dl) infinite}
+html.fall .fl-leaf i{display:block;animation:flsway var(--sd) ease-in-out var(--dl) infinite alternate}
+html.fall .fl-leaf svg{display:block;animation:flspin var(--d) linear var(--dl) infinite;filter:drop-shadow(0 2px 2px rgba(40,15,5,.18))}
+@keyframes flfall{0%{transform:translate3d(0,0,0)}35%{transform:translate3d(calc(var(--dx)*.25),40vh,0)}50%{transform:translate3d(calc(var(--dx)*.8),58vh,0)}100%{transform:translate3d(var(--dx),118vh,0)}}
+@keyframes flsway{from{transform:translateX(calc(var(--sw)*-1)) rotate(-18deg)}to{transform:translateX(var(--sw)) rotate(22deg)}}
+@keyframes flspin{to{transform:rotate(var(--rot))}}
+html.fall .fl-wind{position:absolute;left:0;top:14%;width:100%;height:46%;opacity:.5}
+html.fall .fl-wind path{stroke-dasharray:150 900;stroke-dashoffset:1050;animation:flgust 9s ease-in-out infinite}
+html.fall .fl-wind .w2{animation-delay:-3s;animation-duration:11s}
+html.fall .fl-wind .w3{animation-delay:-6.5s;animation-duration:10s}
+@keyframes flgust{0%{stroke-dashoffset:1050;opacity:0}15%{opacity:1}70%{opacity:.8}100%{stroke-dashoffset:0;opacity:0}}
+html.fall .fl-garland-wrap{display:flex;justify-content:center;margin:-.6rem 0 .8rem}
+html.fall .fl-garland{max-width:80%;height:auto}
+@media(max-width:600px){html.fall .fl-leaf.fl-x{display:none}html.fall .fl-wind{opacity:.35}}
+@media(prefers-reduced-motion:reduce){html.fall .fl-leaves{display:none}html.fall .fl-wind path{animation:none;stroke-dasharray:none;stroke-dashoffset:0;opacity:.35}}
